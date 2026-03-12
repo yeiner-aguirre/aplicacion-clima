@@ -4,31 +4,37 @@
 }
 
 .recent-cities__label {
-  color: rgba(255, 255, 255, 0.58);
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 0.76rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
 .recent-cities__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 9px;
 }
 
 .recent-cities__chip {
   padding: 10px 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
+    rgba(9, 14, 27, 0.22);
   color: var(--text-primary);
   transition:
     background 0.2s ease,
+    border-color 0.2s ease,
     transform 0.2s ease;
 }
 
 .recent-cities__chip:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06)),
+    rgba(9, 14, 27, 0.22);
+  border-color: rgba(255, 255, 255, 0.16);
   transform: translateY(-1px);
 }
 

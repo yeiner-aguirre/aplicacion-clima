@@ -5,10 +5,10 @@ const ForecastPanel = ({ dailyForecast, hourlyForecast, unit }) => (
   <section className="forecast panel">
     <header className="forecast__header">
       <div>
-        <span className="forecast__eyebrow">Próximos días</span>
-        <h2>Pronóstico extendido</h2>
+        <span className="forecast__eyebrow">Proximos dias</span>
+        <h2>Pronostico extendido</h2>
       </div>
-      <p>Lectura rápida de la semana y evolución durante las próximas horas.</p>
+      <p>Lectura rapida de la semana y evolucion durante las proximas horas.</p>
     </header>
 
     <div className="forecast__daily-list">
@@ -42,7 +42,7 @@ const ForecastPanel = ({ dailyForecast, hourlyForecast, unit }) => (
         <article className="forecast__hour-card" key={entry.key}>
           <span className="forecast__hour-label">{entry.label}</span>
           <img
-            alt="Pronóstico horario"
+            alt="Pronostico horario"
             className="forecast__hour-icon"
             src={`https://openweathermap.org/img/wn/${entry.icon}.png`}
           />

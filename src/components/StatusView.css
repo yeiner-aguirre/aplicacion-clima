@@ -19,7 +19,7 @@
 }
 
 .status-view h2 {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--display-font);
   font-size: 1.8rem;
 }
 

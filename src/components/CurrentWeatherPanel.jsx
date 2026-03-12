@@ -2,10 +2,10 @@ import "./CurrentWeatherPanel.css";
 import {
   capitalizeText,
   formatLocalDateTime,
-  getUnitLabel,
   formatPercentage,
   formatSpeed,
   formatTemperature,
+  getUnitLabel,
 } from "../utils/formatters";
 
 const CurrentWeatherPanel = ({ isRefreshing, theme, unit, weather }) => {
@@ -37,27 +37,29 @@ const CurrentWeatherPanel = ({ isRefreshing, theme, unit, weather }) => {
       </header>
 
       <div className="current-weather__hero">
-        <div className="current-weather__temperature-block">
-          <img
-            alt={condition.description}
-            className="current-weather__icon"
-            src={`https://openweathermap.org/img/wn/${condition.icon}@4x.png`}
-          />
-
-          <div className="current-weather__temperature-column">
-            <span className="current-weather__unit-label">
-              Unidad activa {getUnitLabel(unit)}
-            </span>
-            <div className="current-weather__temperature">
-              {formatTemperature(weather.main.temp, unit, { withUnit: true })}
-            </div>
-            <p className="current-weather__feels-like">
-              Sensación térmica{" "}
-              {formatTemperature(weather.main.feels_like, unit, {
-                withUnit: true,
-              })}
-            </p>
+        <div className="current-weather__visual">
+          <div className="current-weather__icon-shell">
+            <img
+              alt={condition.description}
+              className="current-weather__icon"
+              src={`https://openweathermap.org/img/wn/${condition.icon}@4x.png`}
+            />
           </div>
+        </div>
+
+        <div className="current-weather__temperature-column">
+          <span className="current-weather__unit-label">
+            Unidad activa {getUnitLabel(unit)}
+          </span>
+          <div className="current-weather__temperature">
+            {formatTemperature(weather.main.temp, unit, { withUnit: true })}
+          </div>
+          <p className="current-weather__feels-like">
+            Sensacion termica{" "}
+            {formatTemperature(weather.main.feels_like, unit, {
+              withUnit: true,
+            })}
+          </p>
         </div>
 
         <p className="current-weather__summary">{theme.summary}</p>
@@ -65,11 +67,11 @@ const CurrentWeatherPanel = ({ isRefreshing, theme, unit, weather }) => {
 
       <div className="current-weather__chips">
         <div className="current-weather__chip">
-          <span>Máxima</span>
+          <span>Maxima</span>
           <strong>{formatTemperature(weather.main.temp_max, unit)}</strong>
         </div>
         <div className="current-weather__chip">
-          <span>Mínima</span>
+          <span>Minima</span>
           <strong>{formatTemperature(weather.main.temp_min, unit)}</strong>
         </div>
         <div className="current-weather__chip">

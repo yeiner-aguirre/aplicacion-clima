@@ -8,6 +8,12 @@ const SunCyclePanel = ({ weather }) => {
     weather.sys.sunrise,
     weather.sys.sunset,
   );
+  const indicatorPosition =
+    progress <= 0
+      ? "0px"
+      : progress >= 100
+        ? "calc(100% - 30px)"
+        : `calc(${progress}% - 15px)`;
   const sunMessage = getSunPhaseMessage(
     weather.dt,
     weather.sys.sunrise,
@@ -28,8 +34,14 @@ const SunCyclePanel = ({ weather }) => {
 
       <div className="sun-cycle__track">
         <div className="sun-cycle__line" />
-        <div className="sun-cycle__line sun-cycle__line--fill" style={{ width: `${progress}%` }} />
-        <span className="sun-cycle__indicator" style={{ left: `calc(${progress}% - 14px)` }} />
+        <div
+          className="sun-cycle__line sun-cycle__line--fill"
+          style={{ width: `${progress}%` }}
+        />
+        <span
+          className="sun-cycle__indicator"
+          style={{ left: indicatorPosition }}
+        />
       </div>
 
       <div className="sun-cycle__times">

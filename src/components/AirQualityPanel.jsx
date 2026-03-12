@@ -13,7 +13,7 @@ const AirQualityPanel = ({ airQuality }) => {
         </header>
 
         <p className="air-quality__description">
-          OpenWeather no devolvió datos de partículas para esta consulta.
+          OpenWeather no devolvio datos de particulas para esta consulta.
         </p>
       </section>
     );
@@ -21,10 +21,10 @@ const AirQualityPanel = ({ airQuality }) => {
 
   const meta = getAirQualityMeta(currentAir.main.aqi);
   const pollutants = [
-    { label: "PM2.5", value: `${Math.round(currentAir.components.pm2_5)} µg/m3` },
-    { label: "PM10", value: `${Math.round(currentAir.components.pm10)} µg/m3` },
-    { label: "NO2", value: `${Math.round(currentAir.components.no2)} µg/m3` },
-    { label: "O3", value: `${Math.round(currentAir.components.o3)} µg/m3` },
+    { label: "PM2.5", value: `${Math.round(currentAir.components.pm2_5)} ug/m3` },
+    { label: "PM10", value: `${Math.round(currentAir.components.pm10)} ug/m3` },
+    { label: "NO2", value: `${Math.round(currentAir.components.no2)} ug/m3` },
+    { label: "O3", value: `${Math.round(currentAir.components.o3)} ug/m3` },
   ];
 
   return (

@@ -1,5 +1,5 @@
 .sun-cycle {
-  padding: 24px;
+  padding: 26px;
   animation: enter-up 0.96s ease both;
 }
 
@@ -13,56 +13,59 @@
 .sun-cycle__eyebrow {
   display: inline-flex;
   margin-bottom: 10px;
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .sun-cycle__header h2 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 1.55rem;
+  font-family: var(--display-font);
+  font-size: 1.85rem;
+  letter-spacing: -0.05em;
 }
 
 .sun-cycle__header strong {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 2rem;
+  font-family: var(--display-font);
+  font-size: 2.4rem;
+  letter-spacing: -0.06em;
 }
 
 .sun-cycle__message {
-  margin-top: 14px;
+  margin-top: 16px;
   color: var(--text-muted);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .sun-cycle__track {
   position: relative;
-  margin-top: 22px;
-  padding: 22px 0 10px;
+  margin-top: 24px;
+  padding: 24px 0 12px;
 }
 
 .sun-cycle__line {
-  height: 10px;
+  height: 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .sun-cycle__line--fill {
   position: absolute;
-  top: 22px;
+  top: 24px;
   left: 0;
-  background: linear-gradient(90deg, rgba(255, 213, 132, 0.48), rgba(255, 245, 201, 0.92));
-  box-shadow: 0 0 26px rgba(255, 213, 132, 0.22);
+  background: linear-gradient(90deg, rgba(255, 211, 117, 0.52), rgba(255, 244, 194, 0.95));
+  box-shadow: 0 0 28px rgba(255, 213, 132, 0.24);
 }
 
 .sun-cycle__indicator {
   position: absolute;
-  top: 12px;
-  width: 28px;
-  height: 28px;
+  top: 13px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   background: radial-gradient(circle, rgba(255, 244, 197, 1), rgba(255, 213, 132, 0.72));
-  box-shadow: 0 0 26px rgba(255, 213, 132, 0.35);
+  box-shadow: 0 0 28px rgba(255, 213, 132, 0.34);
 }
 
 .sun-cycle__times {
@@ -76,20 +79,24 @@
   display: grid;
   gap: 8px;
   padding: 18px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03)),
+    rgba(7, 13, 25, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .sun-cycle__time-card span {
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .sun-cycle__time-card strong {
-  font-size: 1.15rem;
+  font-family: var(--display-font);
+  font-size: 1.28rem;
+  letter-spacing: -0.03em;
 }
 
 @media (max-width: 760px) {

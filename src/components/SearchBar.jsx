@@ -33,7 +33,7 @@ const SearchBar = ({
         <div>
           <span className="search-bar__eyebrow">Explora el clima</span>
           <p className="search-bar__caption">
-            Busca una ciudad, cambia unidades o vuelve a tu ubicación actual.
+            Busca una ciudad, cambia unidades o vuelve a tu ubicacion actual.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ const SearchBar = ({
           onClick={onLocate}
           type="button"
         >
-          Mi ubicación
+          Mi ubicacion
         </button>
       </div>
 

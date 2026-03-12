@@ -1,24 +1,25 @@
 .highlights {
-  padding: 24px;
+  padding: 26px;
   animation: enter-up 1.05s ease both;
 }
 
 .highlights__header {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .highlights__eyebrow {
   display: inline-flex;
   margin-bottom: 10px;
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .highlights__header h2 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 1.7rem;
+  font-family: var(--display-font);
+  font-size: 1.9rem;
+  letter-spacing: -0.05em;
 }
 
 .highlights__grid {
@@ -28,32 +29,45 @@
 }
 
 .highlights__card {
+  position: relative;
   display: grid;
   gap: 10px;
-  min-height: 150px;
+  min-height: 158px;
   padding: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03)),
+    rgba(7, 13, 25, 0.18);
+}
+
+.highlights__card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), var(--accent), transparent);
 }
 
 .highlights__label {
-  color: rgba(255, 255, 255, 0.66);
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.78rem;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
 .highlights__value {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  line-height: 1.15;
+  font-family: var(--display-font);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
 }
 
 .highlights__detail {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.55;
+  font-size: 0.94rem;
+  line-height: 1.65;
 }
 
 @media (max-width: 760px) {

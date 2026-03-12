@@ -1,9 +1,9 @@
 import "./App.css";
+import AirQualityPanel from "./components/AirQualityPanel";
 import CurrentWeatherPanel from "./components/CurrentWeatherPanel";
 import DynamicBackground from "./components/DynamicBackground";
 import ForecastPanel from "./components/ForecastPanel";
 import HighlightsPanel from "./components/HighlightsPanel";
-import AirQualityPanel from "./components/AirQualityPanel";
 import SearchBar from "./components/SearchBar";
 import StatusView from "./components/StatusView";
 import SunCyclePanel from "./components/SunCyclePanel";
@@ -45,17 +45,17 @@ function App() {
         <header className="app__hero">
           <div className="app__intro">
             <span className="app__kicker">Weather Studio</span>
-            <h1>Una app del clima con presencia, movimiento y mejor información.</h1>
+            <h1>Clima vivo, cinematografico y con mucha mas presencia.</h1>
             <p>
-              Clima actual, pronóstico extendido y escenas dinámicas adaptadas al
-              cielo en tiempo real.
+              Una experiencia atmosferica con datos utiles, composicion premium y
+              escenas que reaccionan al cielo en tiempo real.
             </p>
 
             <div className="app__feature-strip">
-              <span>Fondos reactivos</span>
-              <span>Pronóstico 5 días</span>
-              <span>Calidad del aire</span>
-              <span>Historial reciente</span>
+              <span>Escenas fluidas</span>
+              <span>5 dias + horas</span>
+              <span>AQI en vivo</span>
+              <span>Recientes</span>
             </div>
           </div>
 
@@ -75,15 +75,15 @@ function App() {
 
         {isLoading && !weather ? (
           <StatusView
-            title="Cargando el panorama climático"
-            message="Estamos consultando tu ubicación y preparando el clima actual junto con el pronóstico."
+            title="Cargando el panorama climatico"
+            message="Estamos consultando tu ubicacion y preparando el clima actual junto con el pronostico."
           />
         ) : null}
 
         {!isLoading && !weather ? (
           <StatusView
             title="No hay datos disponibles"
-            message="No fue posible cargar el clima ahora mismo. Puedes intentar de nuevo con tu ubicación o buscar una ciudad."
+            message="No fue posible cargar el clima ahora mismo. Puedes intentar de nuevo con tu ubicacion o buscar una ciudad."
           />
         ) : null}
 
