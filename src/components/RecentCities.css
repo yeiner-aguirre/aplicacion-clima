@@ -1,0 +1,38 @@
+.recent-cities {
+  display: grid;
+  gap: 12px;
+}
+
+.recent-cities__label {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.recent-cities__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recent-cities__chip {
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.recent-cities__chip:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.recent-cities__chip:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}

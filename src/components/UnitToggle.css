@@ -1,0 +1,31 @@
+.unit-toggle {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.unit-toggle__button {
+  min-width: 56px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.unit-toggle__button:hover {
+  transform: translateY(-1px);
+}
+
+.unit-toggle__button--active {
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--accent-strong);
+}

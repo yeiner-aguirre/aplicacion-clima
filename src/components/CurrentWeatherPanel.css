@@ -1,0 +1,167 @@
+.current-weather {
+  min-height: 100%;
+  padding: 28px;
+  animation: enter-up 0.9s ease both;
+}
+
+.current-weather__glow {
+  position: absolute;
+  inset: -20% auto auto -10%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 65%);
+  filter: blur(8px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.current-weather__header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.current-weather__eyebrow {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.current-weather h2 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
+  line-height: 1.05;
+}
+
+.current-weather__timestamp {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.current-weather__state {
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+}
+
+.current-weather__refresh,
+.current-weather__badge {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.current-weather__refresh {
+  color: var(--accent-strong);
+}
+
+.current-weather__hero {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  padding: 28px 0 24px;
+}
+
+.current-weather__temperature-block {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.current-weather__temperature-column {
+  display: grid;
+  gap: 8px;
+}
+
+.current-weather__unit-label {
+  display: inline-flex;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.current-weather__icon {
+  width: clamp(116px, 22vw, 170px);
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.18));
+}
+
+.current-weather__temperature {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(4rem, 9vw, 6.4rem);
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+}
+
+.current-weather__feels-like {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.current-weather__summary {
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.current-weather__chips {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.current-weather__chip {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.current-weather__chip span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.current-weather__chip strong {
+  font-size: 1.28rem;
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .current-weather {
+    padding: 22px;
+  }
+
+  .current-weather__header,
+  .current-weather__temperature-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .current-weather__state {
+    justify-items: start;
+  }
+
+  .current-weather__chips {
+    grid-template-columns: 1fr;
+  }
+}

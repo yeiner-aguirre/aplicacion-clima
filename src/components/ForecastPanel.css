@@ -1,0 +1,161 @@
+.forecast {
+  padding: 24px;
+  animation: enter-up 1s ease both;
+}
+
+.forecast__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: end;
+}
+
+.forecast__eyebrow {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.forecast__header h2 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.7rem;
+}
+
+.forecast__header p {
+  max-width: 300px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-align: right;
+}
+
+.forecast__daily-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.forecast__daily-card {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.forecast__daily-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.forecast__daily-top h3 {
+  font-size: 1rem;
+}
+
+.forecast__daily-top p {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.forecast__daily-top img {
+  width: 54px;
+  flex: none;
+}
+
+.forecast__temperatures {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.forecast__temperatures strong {
+  font-size: 1.6rem;
+}
+
+.forecast__temperatures span {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.forecast__precipitation {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.88rem;
+}
+
+.forecast__timeline {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(94px, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.forecast__timeline::-webkit-scrollbar {
+  height: 8px;
+}
+
+.forecast__timeline::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.forecast__hour-card {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 14px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.forecast__hour-label,
+.forecast__hour-pop {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.forecast__hour-icon {
+  width: 42px;
+}
+
+@media (max-width: 1100px) {
+  .forecast__daily-list {
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .forecast {
+    padding: 20px;
+  }
+
+  .forecast__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .forecast__header p {
+    max-width: none;
+    text-align: left;
+  }
+
+  .forecast__daily-list {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(150px, 1fr);
+    grid-template-columns: none;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+}

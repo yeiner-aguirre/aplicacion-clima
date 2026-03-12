@@ -1,0 +1,225 @@
+.dynamic-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dynamic-background__gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.16), transparent 22%),
+    radial-gradient(circle at 80% 24%, rgba(255, 255, 255, 0.12), transparent 20%);
+}
+
+.dynamic-background__sun,
+.dynamic-background__moon {
+  position: absolute;
+  top: 12%;
+  right: 14%;
+  width: clamp(120px, 18vw, 220px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.dynamic-background__sun {
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 243, 189, 0.95),
+      rgba(255, 196, 86, 0.2) 62%,
+      transparent 70%
+    );
+  box-shadow: 0 0 120px rgba(255, 210, 117, 0.35);
+  animation: pulse-sun 6s ease-in-out infinite;
+}
+
+.dynamic-background__moon {
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.92),
+      rgba(205, 224, 255, 0.22) 66%,
+      transparent 74%
+    );
+  box-shadow: 0 0 90px rgba(191, 220, 255, 0.22);
+}
+
+.dynamic-background__stars,
+.dynamic-background__clouds,
+.dynamic-background__rain,
+.dynamic-background__snow {
+  position: absolute;
+  inset: 0;
+}
+
+.dynamic-background__star {
+  position: absolute;
+  top: var(--star-top);
+  left: var(--star-left);
+  width: var(--star-size);
+  height: var(--star-size);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
+  animation: twinkle 3.2s ease-in-out infinite;
+  animation-delay: var(--star-delay);
+}
+
+.dynamic-background__cloud {
+  position: absolute;
+  top: var(--cloud-top);
+  left: var(--cloud-left);
+  width: var(--cloud-size);
+  aspect-ratio: 2.3 / 1;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 48%, rgba(255, 255, 255, 0.34), transparent 32%),
+    radial-gradient(circle at 55% 45%, rgba(255, 255, 255, 0.32), transparent 36%),
+    radial-gradient(circle at 76% 55%, rgba(255, 255, 255, 0.24), transparent 28%),
+    rgba(255, 255, 255, 0.12);
+  filter: blur(2px);
+  animation: drift-cloud var(--cloud-duration) linear infinite;
+  animation-delay: var(--cloud-delay);
+}
+
+.dynamic-background__drop {
+  position: absolute;
+  top: -8%;
+  left: var(--drop-left);
+  width: 2px;
+  height: 88px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, transparent, rgba(191, 233, 255, 0.95));
+  opacity: var(--drop-opacity);
+  animation: fall-rain var(--drop-duration) linear infinite;
+  animation-delay: var(--drop-delay);
+}
+
+.dynamic-background__flake {
+  position: absolute;
+  top: -10%;
+  left: var(--flake-left);
+  width: var(--flake-size);
+  height: var(--flake-size);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.28);
+  animation: fall-snow var(--flake-duration) linear infinite;
+  animation-delay: var(--flake-delay);
+}
+
+.dynamic-background__fog {
+  position: absolute;
+  inset: auto -10% 8% -10%;
+  height: 42%;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.2), transparent 32%),
+    radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.16), transparent 30%),
+    radial-gradient(circle at 80% 52%, rgba(255, 255, 255, 0.12), transparent 28%);
+  filter: blur(18px);
+  animation: drift-fog 12s ease-in-out infinite alternate;
+}
+
+.dynamic-background__flash {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 35%);
+  opacity: 0;
+  animation: storm-flash 7s linear infinite;
+}
+
+@keyframes drift-cloud {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(130vw);
+  }
+}
+
+@keyframes fall-rain {
+  from {
+    transform: translate3d(0, -10vh, 0) rotate(10deg);
+  }
+
+  to {
+    transform: translate3d(-8vw, 110vh, 0) rotate(10deg);
+  }
+}
+
+@keyframes fall-snow {
+  0% {
+    transform: translate3d(0, -10vh, 0);
+  }
+
+  50% {
+    transform: translate3d(18px, 55vh, 0);
+  }
+
+  100% {
+    transform: translate3d(-12px, 110vh, 0);
+  }
+}
+
+@keyframes drift-fog {
+  from {
+    transform: translateX(-2%);
+  }
+
+  to {
+    transform: translateX(2%);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes pulse-sun {
+  0%,
+  100% {
+    transform: scale(0.98);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes storm-flash {
+  0%,
+  100%,
+  16%,
+  18%,
+  56%,
+  58% {
+    opacity: 0;
+  }
+
+  17%,
+  57% {
+    opacity: 0.55;
+  }
+}
+
+@media (max-width: 760px) {
+  .dynamic-background__sun,
+  .dynamic-background__moon {
+    top: 8%;
+    right: -4%;
+    width: 140px;
+  }
+}
