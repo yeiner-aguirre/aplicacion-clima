@@ -173,6 +173,7 @@
   z-index: 3;
   margin-top: 40px;
   margin-left: -46px;
+  min-width: 0;
 }
 
 .app__banner {
@@ -361,6 +362,41 @@
   }
 }
 
+@media (max-width: 900px) {
+  .app__shell {
+    width: min(100% - 24px, 100%);
+  }
+
+  .app__hero,
+  .app__grid,
+  .app__stack,
+  .app__primary,
+  .app__insights {
+    gap: 18px;
+  }
+
+  .app__intro {
+    padding: 18px 18px 22px;
+  }
+
+  .app__intro::before {
+    inset: 0;
+    border-radius: 30px;
+  }
+
+  .app__intro::after {
+    display: none;
+  }
+
+  .app__intro h1 {
+    font-size: clamp(2.8rem, 8vw, 4.2rem);
+  }
+
+  .app__intro p {
+    max-width: none;
+  }
+}
+
 @media (max-width: 760px) {
   .app__shell {
     width: min(100% - 20px, 100%);
@@ -376,16 +412,21 @@
   }
 
   .app__intro {
-    padding: 12px 0 18px;
+    padding: 18px 16px 20px;
   }
 
-  .app__intro::before,
+  .app__intro::before {
+    inset: 0;
+    border-radius: 26px;
+  }
+
   .app__intro::after {
     display: none;
   }
 
   .app__intro h1 {
-    font-size: clamp(2.7rem, 13vw, 4rem);
+    font-size: clamp(2.45rem, 13vw, 3.6rem);
+    line-height: 0.94;
   }
 
   .app__feature-strip {
@@ -398,5 +439,44 @@
 
   .panel {
     border-radius: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app__shell {
+    width: min(100% - 14px, 100%);
+    padding: 14px 0 24px;
+  }
+
+  .app__intro {
+    padding: 16px 14px 18px;
+  }
+
+  .app__kicker {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .app__intro h1 {
+    font-size: clamp(2.1rem, 14vw, 3rem);
+  }
+
+  .app__intro p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .app__feature-strip span {
+    padding: 9px 12px;
+    font-size: 0.78rem;
+  }
+
+  .app__banner {
+    padding: 14px 14px;
+    border-radius: 18px;
+  }
+
+  .panel {
+    border-radius: 22px;
   }
 }

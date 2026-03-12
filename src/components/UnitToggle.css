@@ -3,6 +3,8 @@
   grid-auto-flow: column;
   gap: 6px;
   padding: 5px;
+  width: fit-content;
+  max-width: 100%;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background:
@@ -32,4 +34,15 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
   color: var(--accent-strong);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 520px) {
+  .unit-toggle {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .unit-toggle__button {
+    min-width: 0;
+  }
 }
