@@ -229,6 +229,7 @@
 
   .current-weather__summary {
     padding: 16px;
+    font-size: 0.96rem;
     line-height: 1.7;
   }
 
@@ -279,6 +280,7 @@
 
   .current-weather__summary {
     font-size: 0.94rem;
+    line-height: 1.62;
   }
 
   .current-weather__chips {
@@ -288,5 +290,9 @@
 
   .current-weather__chip {
     padding: 16px;
+  }
+
+  .current-weather__chip strong {
+    font-size: 1.2rem;
   }
 }

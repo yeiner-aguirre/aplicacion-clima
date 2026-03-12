@@ -6,7 +6,11 @@ const UNIT_OPTIONS = [
 ];
 
 const UnitToggle = ({ onChange, unit }) => (
-  <div className="unit-toggle" role="group" aria-label="Cambiar unidades de temperatura">
+  <div
+    aria-label="Cambiar unidades de temperatura"
+    className="unit-toggle"
+    role="group"
+  >
     {UNIT_OPTIONS.map((option) => (
       <button
         className={`unit-toggle__button ${

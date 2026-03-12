@@ -46,3 +46,18 @@
   opacity: 0.7;
   cursor: wait;
 }
+
+@media (max-width: 520px) {
+  .recent-cities__list {
+    gap: 8px;
+  }
+
+  .recent-cities__chip:nth-child(n + 4) {
+    display: none;
+  }
+
+  .recent-cities__chip {
+    padding: 9px 12px;
+    font-size: 0.92rem;
+  }
+}

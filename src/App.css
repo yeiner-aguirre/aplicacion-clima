@@ -140,6 +140,7 @@
   line-height: 0.9;
   letter-spacing: -0.06em;
   text-wrap: balance;
+  word-break: break-word;
 }
 
 .app__intro p {
@@ -171,6 +172,7 @@
 .app__hero > .search-bar {
   position: relative;
   z-index: 3;
+  width: 100%;
   margin-top: 40px;
   margin-left: -46px;
   min-width: 0;
@@ -395,6 +397,10 @@
   .app__intro p {
     max-width: none;
   }
+
+  .app__hero > .search-bar {
+    max-width: none;
+  }
 }
 
 @media (max-width: 760px) {
@@ -425,12 +431,19 @@
   }
 
   .app__intro h1 {
-    font-size: clamp(2.45rem, 13vw, 3.6rem);
-    line-height: 0.94;
+    max-width: none;
+    font-size: clamp(2.2rem, 12vw, 3.3rem);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
   }
 
   .app__feature-strip {
     gap: 8px;
+  }
+
+  .app__feature-strip span {
+    padding: 9px 12px;
+    font-size: 0.78rem;
   }
 
   .app__hero > .search-bar {
@@ -458,22 +471,38 @@
   }
 
   .app__intro h1 {
-    font-size: clamp(2.1rem, 14vw, 3rem);
+    font-size: clamp(1.95rem, 13vw, 2.7rem);
+    line-height: 0.98;
   }
 
   .app__intro p {
-    font-size: 0.95rem;
-    line-height: 1.65;
+    font-size: 0.92rem;
+    line-height: 1.58;
   }
 
   .app__feature-strip span {
-    padding: 9px 12px;
-    font-size: 0.78rem;
+    padding: 8px 10px;
+    font-size: 0.74rem;
   }
 
   .app__banner {
     padding: 14px 14px;
     border-radius: 18px;
+  }
+
+  .app::before {
+    width: 300px;
+    height: 300px;
+    filter: blur(18px);
+    opacity: 0.55;
+  }
+
+  .app::after {
+    opacity: 0.3;
+  }
+
+  .panel::before {
+    opacity: 0.5;
   }
 
   .panel {
